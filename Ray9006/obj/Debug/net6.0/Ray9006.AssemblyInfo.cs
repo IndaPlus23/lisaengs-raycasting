@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Ray9006")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c340e403dc13cc8f8347f3825dbb2dad07f4e3c2")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+bcbbd2d2b2d217394f4df78135104638618a5bb1")]
 [assembly: System.Reflection.AssemblyProductAttribute("Ray9006")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Ray9006")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
