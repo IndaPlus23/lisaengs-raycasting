@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "Ed9L49dKjbkDyUaWnoaoceCqsMrB6hkg9bpWYhi8fshn5yKHswF9RJWWQBBly4lL4yCKY4SR/B/baAHH26se7A==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Lisa Engström\\Documents\\GitHub\\lisaengs-raycasting\\Ray9006\\Ray9006.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Lisa Engström\\.nuget\\packages\\monogame.content.builder.task\\3.8.1.303\\monogame.content.builder.task.3.8.1.303.nupkg.sha512",
+    "C:\\Users\\Lisa Engström\\.nuget\\packages\\monogame.framework.desktopgl\\3.8.1.303\\monogame.framework.desktopgl.3.8.1.303.nupkg.sha512"
+  ],
+  "logs": []
+}
