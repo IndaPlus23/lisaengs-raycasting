@@ -24,3 +24,29 @@ C:\Users\Lisa Engström\Documents\GitHub\lisaengs-raycasting\Ray9006\obj\Debug\n
 C:\Users\Lisa Engström\Documents\GitHub\lisaengs-raycasting\Ray9006\obj\Debug\net6.0\Ray9006.pdb
 C:\Users\Lisa Engström\Documents\GitHub\lisaengs-raycasting\Ray9006\obj\Debug\net6.0\Ray9006.genruntimeconfig.cache
 C:\Users\Lisa Engström\Documents\GitHub\lisaengs-raycasting\Ray9006\obj\Debug\net6.0\ref\Ray9006.dll
+C:\Users\imtired\Documents\GitHub\lisaengs-raycasting\Ray9006\bin\Debug\net6.0\Ray9006.exe
+C:\Users\imtired\Documents\GitHub\lisaengs-raycasting\Ray9006\bin\Debug\net6.0\Ray9006.deps.json
+C:\Users\imtired\Documents\GitHub\lisaengs-raycasting\Ray9006\bin\Debug\net6.0\Ray9006.runtimeconfig.json
+C:\Users\imtired\Documents\GitHub\lisaengs-raycasting\Ray9006\bin\Debug\net6.0\Ray9006.dll
+C:\Users\imtired\Documents\GitHub\lisaengs-raycasting\Ray9006\bin\Debug\net6.0\Ray9006.pdb
+C:\Users\imtired\Documents\GitHub\lisaengs-raycasting\Ray9006\bin\Debug\net6.0\MonoGame.Framework.dll
+C:\Users\imtired\Documents\GitHub\lisaengs-raycasting\Ray9006\bin\Debug\net6.0\runtimes\linux-x64\native\libSDL2-2.0.so.0
+C:\Users\imtired\Documents\GitHub\lisaengs-raycasting\Ray9006\bin\Debug\net6.0\runtimes\linux-x64\native\libopenal.so.1
+C:\Users\imtired\Documents\GitHub\lisaengs-raycasting\Ray9006\bin\Debug\net6.0\runtimes\osx\native\libSDL2.dylib
+C:\Users\imtired\Documents\GitHub\lisaengs-raycasting\Ray9006\bin\Debug\net6.0\runtimes\osx\native\libopenal.1.dylib
+C:\Users\imtired\Documents\GitHub\lisaengs-raycasting\Ray9006\bin\Debug\net6.0\runtimes\win-x64\native\SDL2.dll
+C:\Users\imtired\Documents\GitHub\lisaengs-raycasting\Ray9006\bin\Debug\net6.0\runtimes\win-x64\native\soft_oal.dll
+C:\Users\imtired\Documents\GitHub\lisaengs-raycasting\Ray9006\bin\Debug\net6.0\runtimes\win-x86\native\SDL2.dll
+C:\Users\imtired\Documents\GitHub\lisaengs-raycasting\Ray9006\bin\Debug\net6.0\runtimes\win-x86\native\soft_oal.dll
+C:\Users\imtired\Documents\GitHub\lisaengs-raycasting\Ray9006\obj\Debug\net6.0\Ray9006.csproj.AssemblyReference.cache
+C:\Users\imtired\Documents\GitHub\lisaengs-raycasting\Ray9006\obj\Debug\net6.0\Ray9006.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\imtired\Documents\GitHub\lisaengs-raycasting\Ray9006\obj\Debug\net6.0\Ray9006.AssemblyInfoInputs.cache
+C:\Users\imtired\Documents\GitHub\lisaengs-raycasting\Ray9006\obj\Debug\net6.0\Ray9006.AssemblyInfo.cs
+C:\Users\imtired\Documents\GitHub\lisaengs-raycasting\Ray9006\obj\Debug\net6.0\Ray9006.csproj.CoreCompileInputs.cache
+C:\Users\imtired\Documents\GitHub\lisaengs-raycasting\Ray9006\obj\Debug\net6.0\Ray9006.sourcelink.json
+C:\Users\imtired\Documents\GitHub\lisaengs-raycasting\Ray9006\obj\Debug\net6.0\Ray9006.csproj.CopyComplete
+C:\Users\imtired\Documents\GitHub\lisaengs-raycasting\Ray9006\obj\Debug\net6.0\Ray9006.dll
+C:\Users\imtired\Documents\GitHub\lisaengs-raycasting\Ray9006\obj\Debug\net6.0\refint\Ray9006.dll
+C:\Users\imtired\Documents\GitHub\lisaengs-raycasting\Ray9006\obj\Debug\net6.0\Ray9006.pdb
+C:\Users\imtired\Documents\GitHub\lisaengs-raycasting\Ray9006\obj\Debug\net6.0\Ray9006.genruntimeconfig.cache
+C:\Users\imtired\Documents\GitHub\lisaengs-raycasting\Ray9006\obj\Debug\net6.0\ref\Ray9006.dll

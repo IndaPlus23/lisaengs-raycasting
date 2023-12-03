@@ -1,24 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Lisa Engström\\Documents\\GitHub\\lisaengs-raycasting\\Ray9006\\Ray9006.csproj": {}
+    "C:\\Users\\imtired\\Documents\\GitHub\\lisaengs-raycasting\\Ray9006\\Ray9006.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Lisa Engström\\Documents\\GitHub\\lisaengs-raycasting\\Ray9006\\Ray9006.csproj": {
+    "C:\\Users\\imtired\\Documents\\GitHub\\lisaengs-raycasting\\Ray9006\\Ray9006.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Lisa Engström\\Documents\\GitHub\\lisaengs-raycasting\\Ray9006\\Ray9006.csproj",
+        "projectUniqueName": "C:\\Users\\imtired\\Documents\\GitHub\\lisaengs-raycasting\\Ray9006\\Ray9006.csproj",
         "projectName": "Ray9006",
-        "projectPath": "C:\\Users\\Lisa Engström\\Documents\\GitHub\\lisaengs-raycasting\\Ray9006\\Ray9006.csproj",
-        "packagesPath": "C:\\Users\\Lisa Engström\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Lisa Engström\\Documents\\GitHub\\lisaengs-raycasting\\Ray9006\\obj\\",
+        "projectPath": "C:\\Users\\imtired\\Documents\\GitHub\\lisaengs-raycasting\\Ray9006\\Ray9006.csproj",
+        "packagesPath": "C:\\Users\\imtired\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\imtired\\Documents\\GitHub\\lisaengs-raycasting\\Ray9006\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\Lisa Engström\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\imtired\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -64,6 +60,24 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[6.0.25, 6.0.25]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Host.win-x64",
+              "version": "[6.0.25, 6.0.25]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[6.0.25, 6.0.25]"
+            },
+            {
+              "name": "Microsoft.WindowsDesktop.App.Ref",
+              "version": "[6.0.25, 6.0.25]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
