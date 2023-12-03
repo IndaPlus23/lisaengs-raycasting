@@ -23,9 +23,9 @@ namespace Ray9006
         }
 
         // NOTE: Map helpers
-        public static float[] GetMapSquareCenterPosition(int x, int y)
+        public static float[] GetMapSquareCenterPosition(int x, int y, int mapSize)
         {
-            float[] position = new float[2] { x * MapClass.GetMapSize() + MapClass.GetMapSize() / 2, y * MapClass.GetMapSize() + MapClass.GetMapSize() / 2 };
+            float[] position = new float[2] { x * mapSize + mapSize / 2, y * mapSize + mapSize / 2 };
             return position;
         }
     }

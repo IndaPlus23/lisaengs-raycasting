@@ -22,21 +22,54 @@ namespace Ray9006
             pdy = MathF.Sin(pa) * 5;
         }
 
-        public void Update(KeyboardState state)
+        public void Update(KeyboardState state, MapClass _map)
         {
+            // Calculate current position on the map
+            int mx = (int)(px / _map.mapSize);
+            int my = (int)(py / _map.mapSize);
             if (state.IsKeyDown(Keys.W))
             {
-                px += pdx;
-                py += pdy;
+                mx = (int)((px + pdx) / _map.mapSize);
+                my = (int)((py + pdy) / _map.mapSize);
+                if (_map.map[my * _map.mapWidth + mx] != 1)
+                {
+                    px += pdx;
+                    py += pdy;
+                }
             }
             if (state.IsKeyDown(Keys.S))
             {
-                px -= pdx;
-                py -= pdy;
+                mx = (int)((px - pdx) / _map.mapSize);
+                my = (int)((py - pdy) / _map.mapSize);
+                if (_map.map[my * _map.mapWidth + mx] != 1)
+                {
+                    px -= pdx;
+                    py -= pdy;
+                }
+            }
+            if (state.IsKeyDown(Keys.D))
+            {
+                mx = (int)((px - pdy) / _map.mapSize);
+                my = (int)((py + pdx) / _map.mapSize);
+                if (_map.map[my * _map.mapWidth + mx] != 1)
+                {
+                    px -= pdy;
+                    py += pdx;
+                }
             }
             if (state.IsKeyDown(Keys.A))
             {
-                pa -= 0.1f;
+                mx = (int)((px + pdy) / _map.mapSize);
+                my = (int)((py - pdx) / _map.mapSize);
+                if (_map.map[my * _map.mapWidth + mx] != 1)
+                {
+                    px += pdy;
+                    py -= pdx;
+                }
+            }
+            if (state.IsKeyDown(Keys.Left))
+            {
+                pa -= 0.05f;
                 if (pa < 0)
                 {
                     pa += 2 * (float)Math.PI;
@@ -44,9 +77,9 @@ namespace Ray9006
                 pdx = (float)Math.Cos(pa) * 5;
                 pdy = (float)Math.Sin(pa) * 5;
             }
-            if (state.IsKeyDown(Keys.D))
+            if (state.IsKeyDown(Keys.Right))
             {
-                pa += 0.1f;
+                pa += 0.05f;
                 if (pa > 2 * Math.PI)
                 {
                     pa -= 2 * (float)Math.PI;

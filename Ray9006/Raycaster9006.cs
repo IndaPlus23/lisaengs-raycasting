@@ -10,8 +10,8 @@ namespace Ray9006
 {
     public class Raycaster9006
     {
-        int r, mx, my, mp, dof;
-        float rx, ry, ra, xo, yo;
+        int r, mx, my, mp;
+        float rx, ry, ra;
         float one_degree = (float)(Math.PI / 180);
         float dist = 0;
         float[] wall_color = new float[3] { 1f, 1f, 1f };
@@ -24,15 +24,13 @@ namespace Ray9006
             mx = 0;
             my = 0;
             mp = 0;
-            dof = 0;
             rx = 0;
             ry = 0;
-            xo = 0;
-            yo = 0;
         }
 
-        public void Cast(int rays, Player player, MapClass _map, SpriteBatch _spriteBatch, Texture2D whiteRectangle)
+        public float[,] Cast(int rays, Player player, MapClass _map, SpriteBatch _spriteBatch, Texture2D whiteRectangle)
         {
+            float[,] saved_rays = new float[rays, 2];
             ra = player.pa - one_degree * rays / 2;
             if (ra < 0)
             {
@@ -45,122 +43,39 @@ namespace Ray9006
 
             for (r = 0; r < rays; r++)
             {
-                // Check horizontal lines
-                dof = 0;
-                float disH = 1000000;
-                float hx = player.px;
-                float hy = player.py;
-                float aTan = -1 / MathF.Tan(ra);
-                if (ra > MathF.PI)
+                for (var d = 0; d < 1000; d++)
                 {
-                    ry = (((int)player.py >> 6) << 6) - 0.0001f;
-                    rx = (player.py - ry) * aTan + player.px;
-                    yo = -64;
-                    xo = -yo * aTan;
-                }
-                if (ra < MathF.PI)
-                {
-                    ry = (((int)player.py >> 6) << 6) + 64;
-                    rx = (player.py - ry) * aTan + player.px;
-                    yo = 64;
-                    xo = -yo * aTan;
-                }
-                if (ra == 0 || ra == MathF.PI)
-                {
-                    rx = player.px;
-                    ry = player.py;
-                    dof = 8;
-                }
-                while (dof < 8)
-                {
-                    mx = (int)(rx) >> 6;
-                    my = (int)(ry) >> 6;
+                    dist = distance(player.px, player.py, rx, ry, ra);
+                    rx = player.px + d * MathF.Cos(ra);
+                    ry = player.py + d * MathF.Sin(ra);
+                    mx = (int)(rx / _map.mapSize);
+                    my = (int)(ry / _map.mapSize);
                     mp = my * _map.mapWidth + mx;
                     if (mp > 0 && mp < _map.mapWidth * _map.mapHeight && _map.map[mp] == 1)
                     {
-                        hx = rx;
-                        hy = ry;
-                        disH = distance(player.px, player.py, hx, hy, ra);
-                        dof = 8;
-                    }
-                    else
-                    {
-                        rx += xo;
-                        ry += yo;
-                        dof += 1;
+                        d = 1000;
                     }
                 }
-                // DrawLine(player, _map, _spriteBatch, whiteRectangle);
-                // Check vertical lines
-                dof = 0;
-                float disV = 1000000;
-                float vx = player.px;
-                float vy = player.py;
-                float nTan = -MathF.Tan(ra);
-                if (ra > MathF.PI / 2 && ra < 3 * MathF.PI / 2)
+                // Color the walls based on distance, black if too far
+                float limit = 750;
+                if (dist > limit)
                 {
-                    rx = (((int)player.px >> 6) << 6) - 0.0001f;
-                    ry = (player.px - rx) * nTan + player.py;
-                    xo = -64;
-                    yo = -xo * nTan;
+                    dist = limit;
                 }
-                if (ra < MathF.PI / 2 || ra > 3 * MathF.PI / 2)
-                {
-                    rx = (((int)player.px >> 6) << 6) + 64;
-                    ry = (player.px - rx) * nTan + player.py;
-                    xo = 64;
-                    yo = -xo * nTan;
-                }
-                if (ra == 0 || ra == MathF.PI)
-                {
-                    rx = player.px;
-                    ry = player.py;
-                    dof = 8;
-                }
-                while (dof < 8)
-                {
-                    mx = (int)(rx) >> 6;
-                    my = (int)(ry) >> 6;
-                    mp = my * _map.mapWidth + mx;
-                    if (mp > 0 && mp < _map.mapWidth * _map.mapHeight && _map.map[mp] == 1)
-                    {
-                        vx = rx;
-                        vy = ry;
-                        disV = distance(player.px, player.py, vx, vy, ra);
-                        dof = 8;
-                    }
-                    else
-                    {
-                        rx += xo;
-                        ry += yo;
-                        dof += 1;
-                    }
-                }
+                wall_color[0] = 1 - dist / limit;
+                wall_color[1] = 1 - dist / limit;
+                wall_color[2] = 1 - dist / limit;
 
-                if (disV < disH)
-                {
-                    rx = vx;
-                    ry = vy;
-                    dist = disV;
-                    wall_color[0] = 0.8f;
-                    wall_color[1] = 0.8f;
-                    wall_color[2] = 0.8f;
-                }
-                else
-                {
-                    rx = hx;
-                    ry = hy;
-                    dist = disH;
-                    wall_color[0] = 0.7f;
-                    wall_color[1] = 0.7f;
-                    wall_color[2] = 0.7f;
-                }
-                DrawLine(player, _map, _spriteBatch, whiteRectangle, dist);
+                // DrawLine(player, _map, _spriteBatch, whiteRectangle, dist);
+                saved_rays[r, 0] = dist;
+                saved_rays[r, 1] = ra;
 
                 Draw(rays, player, _map, _spriteBatch, whiteRectangle);
 
                 ra += one_degree;
             }
+
+            return saved_rays;
         }
 
         private void Draw(int rays, Player player, MapClass _map, SpriteBatch _spriteBatch, Texture2D whiteRectangle)
@@ -200,7 +115,7 @@ namespace Ray9006
             return (float)MathF.Sqrt((bx - ax) * (bx - ax) + (by - ay) * (by - ay));
         }
 
-        public void DrawLine(Player player, MapClass _map, SpriteBatch _spriteBatch, Texture2D whiteRectangle, float dist)
+        public void DrawLine(Player player, MapClass _map, SpriteBatch _spriteBatch, Texture2D whiteRectangle, float dist, float ra)
         {
             // Draw line from player to wall (px, py) -> (rx, ry)
             _spriteBatch.Draw(whiteRectangle, new Vector2(player.px, player.py), null,
