@@ -12,10 +12,10 @@ namespace Ray9006
         public float px, py;
         public float pdx, pdy, pa;
         
-        public Player(float x, float y)
+        public Player(float[] pos)
         {
-            px = x;
-            py = y;
+            px = pos[0];
+            py = pos[1];
             // Start looking 45 degrees to the right
             pa = - MathF.PI / 4; // Why negative? Because the y axis is inverted.
             pdx = MathF.Cos(pa) * 5;

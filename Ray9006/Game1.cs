@@ -10,7 +10,6 @@ public class Game1 : Game
 {
     private GraphicsDeviceManager _graphics;
     private SpriteBatch _spriteBatch;
-    private int[] _window_dimensions = new int[2] { 1920, 1080 };
 
     private Player _player;
     Texture2D whiteRectangle;
@@ -24,13 +23,13 @@ public class Game1 : Game
         IsMouseVisible = true;
 
         // Set the window size
-        _graphics.PreferredBackBufferWidth = _window_dimensions[0];
-        _graphics.PreferredBackBufferHeight = _window_dimensions[1];
+        _graphics.PreferredBackBufferWidth = Helper.GetWindowWidth();
+        _graphics.PreferredBackBufferHeight = Helper.GetWindowHeight();
         _graphics.ApplyChanges();
 
         _map = new MapClass();
 
-        _player = new Player((64+32)*3, 64+32);
+        _player = new Player(Helper.GetMapSquareCenterPosition(1, 1));
         _raycaster = new Raycaster9006(_player);
     }
 
@@ -83,13 +82,17 @@ public class Game1 : Game
 
         // TODO: Add your drawing code here
         _spriteBatch.Begin();
-        DrawMap();
-        // Draw a rectangle at the player's position
-        DrawPlayer();
-        _raycaster.Cast(_player, _map, _spriteBatch, whiteRectangle);
+
+        _raycaster.Cast(60, _player, _map, _spriteBatch, whiteRectangle);
+        DrawMinimap();
 
         _spriteBatch.End();
         base.Draw(gameTime);
+    }
+
+    private void DrawMinimap() {
+        DrawMap();
+        DrawPlayer();
     }
 
     private void DrawPlayer()
@@ -103,8 +106,6 @@ public class Game1 : Game
         _spriteBatch.Draw(whiteRectangle, new Vector2(_player.px, _player.py), null,
                 Color.Yellow, _player.pa, Vector2.Zero, new Vector2(100f, 1f),
                 SpriteEffects.None, 0f);
-        // Draw a line from the player's position to walls
-        // _raycaster.DrawLine(_player, _map, _spriteBatch, whiteRectangle);
     }
 
     private void DrawMap()
@@ -114,13 +115,15 @@ public class Game1 : Game
         {
             for (int j = 0; j < _map.mapHeight; j++)
             {
+                Color color = Color.White;
                 if (map[i * _map.mapWidth + j] == 1)
                 {
-                    _spriteBatch.Draw(whiteRectangle, new Vector2(j * _map.mapSize, i * _map.mapSize), null,
-                        Color.Black, 0f, Vector2.Zero, new Vector2(_map.mapSize, _map.mapSize),
-                        SpriteEffects.None, 0f);
+                    color = Color.Black;
                 }
-            }    
+                _spriteBatch.Draw(whiteRectangle, new Vector2(j * _map.mapSize, i * _map.mapSize), null,
+                    color, 0f, Vector2.Zero, new Vector2(_map.mapSize, _map.mapSize),
+                    SpriteEffects.None, 0f);
+            }
         }
     }
 }
