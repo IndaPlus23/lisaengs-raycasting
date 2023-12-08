@@ -19,4 +19,5 @@ Implements [Randomized Prim’s Algorithm](https://medium.com/swlh/fun-with-pyth
 ### Totally real game footage
 ![Game footage](1.png)
 ![Game footage](2.png)
+*ps man kan också ha större labyrinter*
 ![Game footage](3.png)
