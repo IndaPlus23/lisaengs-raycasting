@@ -28,9 +28,11 @@ public class Game1 : Game
         _graphics.PreferredBackBufferHeight = Helper.GetWindowHeight();
         _graphics.ApplyChanges();
 
-        _map = new MapClass(12);
+        _map = new MapClass(64);
+        // Scale player speed to map size
+        float speed = 0.04f * _map.mapSize;
 
-        _player = new Player(Helper.GetMapSquareCenterPosition(_map.start[0], _map.start[1], _map.mapSize));
+        _player = new Player(Helper.GetMapSquareCenterPosition(_map.start[0], _map.start[1], _map.mapSize), speed);
         _raycaster = new Raycaster9006(_player);
     }
 

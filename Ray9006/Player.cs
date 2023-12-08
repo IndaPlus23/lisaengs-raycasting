@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.VisualBasic.FileIO;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Input;
 
@@ -11,15 +12,18 @@ namespace Ray9006
     {
         public float px, py;
         public float pdx, pdy, pa;
+        private float speed = 0.1f;
         
-        public Player(float[] pos)
+        public Player(float[] pos, float in_speed)
         {
+            speed = in_speed;
+
             px = pos[0];
             py = pos[1];
             // Start looking 45 degrees to the right
             pa = - MathF.PI / 4; // Why negative? Because the y axis is inverted.
-            pdx = MathF.Cos(pa) * 5;
-            pdy = MathF.Sin(pa) * 5;
+            pdx = MathF.Cos(pa) * speed;
+            pdy = MathF.Sin(pa) * speed;
         }
 
         public void Update(KeyboardState state, MapClass _map)
@@ -74,8 +78,8 @@ namespace Ray9006
                 {
                     pa += 2 * (float)Math.PI;
                 }
-                pdx = (float)Math.Cos(pa) * 5;
-                pdy = (float)Math.Sin(pa) * 5;
+                pdx = (float)Math.Cos(pa) * speed;
+                pdy = (float)Math.Sin(pa) * speed;
             }
             if (state.IsKeyDown(Keys.Right))
             {
@@ -84,8 +88,8 @@ namespace Ray9006
                 {
                     pa -= 2 * (float)Math.PI;
                 }
-                pdx = (float)Math.Cos(pa) * 5;
-                pdy = (float)Math.Sin(pa) * 5;
+                pdx = (float)Math.Cos(pa) * speed;
+                pdy = (float)Math.Sin(pa) * speed;
             }
         }
     }

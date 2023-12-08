@@ -84,7 +84,7 @@ namespace Ray9006
             // step 3, algorithm
             // while walls pick random wall
             int i_lim = 0;
-            while (walls.Count > 0 && i_lim < 1000)
+            while (walls.Count > 0 && i_lim < 100000)
             {
                 // pick random wall from list
                 int[] random_wall = walls[(int)rnd.Next(0, walls.Count - 1)];
